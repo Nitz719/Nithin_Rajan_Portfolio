@@ -260,15 +260,17 @@
                 <h3>Infotainment CCS (Connected Car System) Automation - FORVIA</h3>
                 <p>Environment: Python, Linux, Android</p>
                 <p>Description: Infotainment CCS Automation project is IVI (In-Vehicle Infotainment project) developed by Forvia, France.</p>
-                <p>Contribution:
-                Led system and software automation for the In-Vehicle Infotainment project.
-                Mentored and monitored the automation team to enhance productivity and quality.
-                Developed test case scripts in Python using the BDD framework.
-                Executed test cases and managed test plans effectively.
-                Conducted batch execution and performed report analysis.
-                Reported bugs and maintained debugging records in JIRA.
-                Ensured maintainable code in GIT, adhering to PEP style guidelines and participating in code reviews.
-                Created detailed execution reports in TestRail.</p>
+                <p>Contribution:</p>
+                <ul>
+                    <li>Led system and software automation for the In-Vehicle Infotainment project.</li>
+                    <li>Mentored and monitored the automation team to enhance productivity and quality.</li>
+                    <li>Developed test case scripts in Python using the BDD framework.</li>
+                    <li>Executed test cases and managed test plans effectively.</li>
+                    <li>Conducted batch execution and performed report analysis.</li>
+                    <li>Reported bugs and maintained debugging records in JIRA.</li>
+                    <li>Ensured maintainable code in GIT, adhering to PEP style guidelines and participating in code reviews.</li>
+                    <li>Created detailed execution reports in TestRail.</li>
+                </ul>
             </div>
             <div class="project-item">
                 <h3>B.Y.D Project</h3>
