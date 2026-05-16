@@ -208,85 +208,24 @@ nav.scrolled{padding:12px var(--pad);background:rgba(3,3,9,0.96);backdrop-filter
 .tag.gr{border-color:rgba(0,255,136,.22);color:var(--gr);background:rgba(0,255,136,.04)}.tag.gr:hover{border-color:var(--gr);background:rgba(0,255,136,.1)}
 @media(max-width:1024px){.skills-wrap{grid-template-columns:1fr;gap:48px}}
 
-/* ═══════════════════════════════════════════════════
-   PROJECTS — FULLY RESPONSIVE THEATER
-═══════════════════════════════════════════════════ */
+/* ═══ PROJECTS ═══ */
 #projects{background:var(--bg);overflow:hidden}
 .proj-theater-wrap{position:relative}
 .proj-header{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:20px;margin-bottom:32px}
 .proj-nav-btns{display:flex;gap:10px}
 .pnb{width:48px;height:48px;border-radius:2px;border:1px solid var(--bd);background:var(--surf);display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--muted2);transition:all .3s;cursor:pointer;font-family:'Share Tech Mono',monospace}
 .pnb:hover{border-color:var(--cy);color:var(--cy);background:rgba(0,212,255,.07)}
-
-/* ─── STAGE: height is auto-adjusting on all sizes ─── */
-.proj-stage{
-  position:relative;
-  /* On mobile height is determined by content */
-  border-radius:3px;border:1px solid var(--bd);
-  overflow:hidden;
-  /* Min height avoids collapse during transitions */
-  min-height:200px;
-}
-
-/* Each slide stacks image above info on all screens,
-   then goes side-by-side on large screens */
-.proj-slide{
-  position:absolute;inset:0;
-  display:grid;
-  /* Mobile-first: single column */
-  grid-template-columns:1fr;
-  grid-template-rows:min-content auto;
-  opacity:0;pointer-events:none;
-  transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1);
-  transform:translateX(48px);
-  width:100%;
-  /* Height driven by tallest content via JS */
-}
-.proj-slide.active{
-  opacity:1;pointer-events:auto;
-  transform:translateX(0);
-  position:relative; /* takes up space so stage grows */
-}
-.proj-slide.exit-left{
-  opacity:0;transform:translateX(-48px);
-  position:absolute;inset:0; /* goes back to overlay so doesn't affect height */
-}
-
-/* IMAGE SIDE */
-.proj-img-side{
-  position:relative;overflow:hidden;
-  /* Fixed aspect ratio — always visible */
-  width:100%;
-  aspect-ratio:16/9;
-  flex-shrink:0;
-}
-.proj-img-side img{
-  width:100%;height:100%;
-  object-fit:cover;object-position:center;
-  display:block;
-  transition:transform .6s cubic-bezier(.16,1,.3,1);
-}
+.proj-stage{position:relative;border-radius:3px;border:1px solid var(--bd);overflow:hidden;min-height:200px}
+.proj-slide{position:absolute;inset:0;display:grid;grid-template-columns:1fr;grid-template-rows:min-content auto;opacity:0;pointer-events:none;transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1);transform:translateX(48px);width:100%}
+.proj-slide.active{opacity:1;pointer-events:auto;transform:translateX(0);position:relative}
+.proj-slide.exit-left{opacity:0;transform:translateX(-48px);position:absolute;inset:0}
+.proj-img-side{position:relative;overflow:hidden;width:100%;aspect-ratio:16/9;flex-shrink:0}
+.proj-img-side img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .6s cubic-bezier(.16,1,.3,1)}
 .proj-slide.active .proj-img-side img{transform:scale(1)}
 .proj-slide:not(.active) .proj-img-side img{transform:scale(1.06)}
-.proj-img-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(to bottom,rgba(3,3,9,0.1) 40%,rgba(3,3,9,0.55) 100%);
-}
-.proj-num-badge{
-  position:absolute;top:16px;left:16px;
-  font-family:'Fraunces',serif;font-weight:900;
-  font-size:clamp(40px,10vw,72px);
-  color:rgba(255,255,255,0.08);line-height:1;letter-spacing:-4px;
-  pointer-events:none;user-select:none;
-}
-
-/* INFO SIDE */
-.proj-info-side{
-  background:var(--bg2);
-  padding:clamp(20px,4vw,44px) clamp(16px,4vw,40px);
-  display:flex;flex-direction:column;justify-content:center;
-  border-top:1px solid var(--bd);
-}
+.proj-img-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(3,3,9,0.1) 40%,rgba(3,3,9,0.55) 100%)}
+.proj-num-badge{position:absolute;top:16px;left:16px;font-family:'Fraunces',serif;font-weight:900;font-size:clamp(40px,10vw,72px);color:rgba(255,255,255,0.08);line-height:1;letter-spacing:-4px;pointer-events:none;user-select:none}
+.proj-info-side{background:var(--bg2);padding:clamp(20px,4vw,44px) clamp(16px,4vw,40px);display:flex;flex-direction:column;justify-content:center;border-top:1px solid var(--bd)}
 .proj-cat{font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:3px;color:var(--cy);text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:10px}
 .proj-cat::before{content:'';width:18px;height:1px;background:var(--cy)}
 .proj-title{font-family:'Rajdhani',serif;font-weight:800;font-size:clamp(18px,4vw,32px);line-height:1.1;letter-spacing:-1px;color:var(--text);margin-bottom:12px}
@@ -296,52 +235,28 @@ nav.scrolled{padding:12px var(--pad);background:rgba(3,3,9,0.96);backdrop-filter
 .proj-actions{display:flex;align-items:center;gap:16px}
 .proj-link{display:inline-flex;align-items:center;gap:8px;font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:1.5px;color:var(--cy);text-transform:uppercase;transition:gap .3s;cursor:pointer;background:none;border:none;padding:0}
 .proj-link:hover{gap:14px;color:var(--cy2)}
-
-/* Expand/collapse details */
 .proj-details{max-height:0;overflow:hidden;transition:max-height .4s ease}
 .proj-details.open{max-height:400px}
 .proj-details ul{list-style:none;margin-top:14px;border-top:1px solid var(--bd);padding-top:12px;display:flex;flex-direction:column;gap:7px}
 .proj-details li{font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:.5px;color:var(--muted2);padding-left:16px;position:relative;line-height:1.65}
 .proj-details li::before{content:'→';position:absolute;left:0;color:var(--cy);font-size:10px}
-
-/* dots & counter */
 .proj-dots{display:flex;justify-content:center;gap:8px;margin-top:20px;flex-wrap:wrap}
 .proj-dot{width:6px;height:6px;border-radius:50%;background:var(--bd2);transition:all .3s;cursor:pointer;border:none;padding:0}
 .proj-dot.active{width:24px;border-radius:3px;background:var(--cy)}
 .proj-counter{font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--muted);margin-top:10px;text-align:center}
 .proj-counter span{color:var(--text);font-weight:500}
-
-/* filter */
 .proj-filter{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:20px}
 .pf{background:none;border:1px solid var(--bd);font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--muted);padding:7px 14px;border-radius:2px;text-transform:uppercase;transition:all .25s;cursor:pointer}
 .pf.act{border-color:var(--cy);color:var(--cy);background:rgba(0,212,255,.07)}
 .pf:hover{border-color:var(--cy2);color:var(--cy2)}
-
-/* swipe hint */
 .swipe-hint{display:none;text-align:center;font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--muted);margin-top:14px}
-
-/* ── DESKTOP: side-by-side layout ── */
 @media(min-width:769px){
-  .proj-slide{
-    grid-template-columns:1.1fr 1fr;
-    grid-template-rows:1fr;
-  }
-  .proj-img-side{
-    aspect-ratio:unset; /* fill the grid cell */
-    height:100%;
-    min-height:460px;
-  }
-  .proj-info-side{
-    border-top:none;
-    border-left:1px solid var(--bd);
-  }
-  .proj-img-overlay{
-    background:linear-gradient(90deg,transparent 55%,var(--bg) 100%),linear-gradient(to bottom,rgba(3,3,9,.2),transparent);
-  }
+  .proj-slide{grid-template-columns:1.1fr 1fr;grid-template-rows:1fr}
+  .proj-img-side{aspect-ratio:unset;height:100%;min-height:460px}
+  .proj-info-side{border-top:none;border-left:1px solid var(--bd)}
+  .proj-img-overlay{background:linear-gradient(90deg,transparent 55%,var(--bg) 100%),linear-gradient(to bottom,rgba(3,3,9,.2),transparent)}
   .proj-stage{min-height:460px}
 }
-
-/* ── TABLET ── */
 @media(max-width:768px){
   .swipe-hint{display:block}
   .proj-stage{border-radius:2px}
@@ -350,8 +265,6 @@ nav.scrolled{padding:12px var(--pad);background:rgba(3,3,9,0.96);backdrop-filter
   .proj-filter{width:100%}
   .proj-nav-btns{align-self:flex-end}
 }
-
-/* ── SMALL MOBILE ── */
 @media(max-width:480px){
   .proj-img-side{aspect-ratio:4/3}
   .proj-info-side{padding:18px 14px}
@@ -413,8 +326,6 @@ nav.scrolled{padding:12px var(--pad);background:rgba(3,3,9,0.96);backdrop-filter
 .clink-lab{font-family:'Share Tech Mono',monospace;font-size:8px;letter-spacing:2px;color:var(--muted);margin-bottom:3px}
 .clink-val{font-size:clamp(11px,1.5vw,13.5px);font-weight:600;color:var(--text)}
 .clink-val.cy{color:var(--cy)}
-
-/* ── FORM ── */
 .form-wrap{display:flex;flex-direction:column;gap:12px}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .f-label{font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--muted);margin-bottom:5px;display:block}
@@ -525,7 +436,7 @@ footer{border-top:1px solid var(--bd);background:var(--bg2);padding:clamp(16px,3
     <p class="hero-role">
       Building machines that <strong>perceive, plan, and act.</strong><br>
       Specialised in <span class="hl">ROS2 · SLAM · Sensor Fusion</span> and autonomous systems —
-      from PET Robot (Furtual)s to Level&nbsp;3 self-driving vehicles.
+      from robotic arms to Level&nbsp;3 self-driving vehicles.
     </p>
     <div class="hero-actions">
       <a href="#projects" class="btn-primary mag">
@@ -724,27 +635,28 @@ footer{border-top:1px solid var(--bd);background:var(--bg2);padding:clamp(16px,3
       <!-- STAGE -->
       <div class="proj-stage" id="projStage">
 
+        <!-- PROJECT 01: PET Robot — FIX: raw URL + correct description -->
         <div class="proj-slide active" data-cat="robotics"
-          data-title="PET Robot (Furtual) — Ball Detection &amp; Tracking"
+          data-title="PET Robot — Home Pet Monitoring System"
           data-cat-label="Robotics · Simulation"
-          data-img="https://github.com/Nitz719/Nithin_Rajan_Portfolio/blob/main/images/PET%20Robot%20(Furtual).JPEG"
+          data-img="https://raw.githubusercontent.com/Nitz719/Nithin_Rajan_Portfolio/main/images/PET%20Robot%20(Furtual).JPEG"
           data-desc="The project aims to develop a system for monitoring pets at home. It is currently in its initial stage, with a basic robot simulation created using ROS2 Humble. RTAB-Map is being utilized for navigation, localization, and mapping."
-          data-tags="C++,Python,ROS2,MoveIt,Gazebo"
-          data-details="Developed CR5 PET Robot (Furtual) URDF description and Gazebo simulation|Simulated RGBD camera within the ROS2 platform|Created MoveIt configuration for Cartesian and joint trajectories|Implemented dynamic blue object detection and collision avoidance">
+          data-tags="C++,Python,ROS2,RTAB-Map,Gazebo"
+          data-details="Developed a robot simulation for home pet monitoring using ROS2 Humble|RTAB-Map integrated for navigation, localization, and mapping|Basic robot model built and tested in Gazebo simulation environment">
           <div class="proj-img-side">
-            <img src="https://github.com/Nitz719/Nithin_Rajan_Portfolio/blob/main/images/PET%20Robot%20(Furtual).JPEG" alt="PET Robot (Furtual) ROS2 Simulation" loading="lazy">
+            <img src="https://raw.githubusercontent.com/Nitz719/Nithin_Rajan_Portfolio/main/images/PET%20Robot%20(Furtual).JPEG" alt="PET Robot Home Monitoring System" loading="lazy">
             <div class="proj-img-overlay"></div>
             <div class="proj-num-badge">01</div>
           </div>
           <div class="proj-info-side">
             <div class="proj-cat">Robotics · Simulation</div>
-            <div class="proj-title">PET Robot (Furtual) — Ball Detection &amp; Tracking</div>
+            <div class="proj-title">PET Robot — Home Pet Monitoring System</div>
             <div class="proj-desc">The project aims to develop a system for monitoring pets at home. It is currently in its initial stage, with a basic robot simulation created using ROS2 Humble. RTAB-Map is being utilized for navigation, localization, and mapping.</div>
             <div class="proj-tags">
               <span class="proj-tag" style="background:rgba(255,85,0,.1);border:1px solid rgba(255,85,0,.25);color:var(--or2)">C++</span>
               <span class="proj-tag" style="background:rgba(255,85,0,.1);border:1px solid rgba(255,85,0,.25);color:var(--or2)">Python</span>
               <span class="proj-tag" style="background:rgba(0,212,255,.07);border:1px solid rgba(0,212,255,.25);color:var(--cy2)">ROS2</span>
-              <span class="proj-tag" style="background:rgba(0,212,255,.07);border:1px solid rgba(0,212,255,.25);color:var(--cy2)">MoveIt</span>
+              <span class="proj-tag" style="background:rgba(0,212,255,.07);border:1px solid rgba(0,212,255,.25);color:var(--cy2)">RTAB-Map</span>
               <span class="proj-tag" style="background:rgba(0,212,255,.07);border:1px solid rgba(0,212,255,.25);color:var(--cy2)">Gazebo</span>
             </div>
             <div class="proj-actions">
@@ -752,64 +664,66 @@ footer{border-top:1px solid var(--bd);background:var(--bg2);padding:clamp(16px,3
               <button class="proj-link" onclick="toggleDetails(this)" style="color:var(--muted2)">Show Points ↓</button>
             </div>
             <div class="proj-details"><ul>
-              <li>Developed CR5 PET Robot (Furtual) URDF and Gazebo simulation environment</li>
-              <li>Simulated RGBD camera and configured MoveIt motion planner</li>
-              <li>Implemented real-time blue object detection with collision avoidance</li>
+              <li>Developed a robot simulation for home pet monitoring using ROS2 Humble</li>
+              <li>RTAB-Map integrated for navigation, localization, and mapping</li>
+              <li>Basic robot model built and tested in Gazebo simulation environment</li>
             </ul></div>
           </div>
         </div>
 
+        <!-- PROJECT 02: Robo Taxi — Tata Elxsi — updated description -->
         <div class="proj-slide" data-cat="av"
-          data-title="Robo Taxi — Level 3 Autonomous Vehicle"
-          data-cat-label="Autonomous Vehicle"
+          data-title="Robo Taxi — Level 3 AV (Tata Elxsi)"
+          data-cat-label="Autonomous Vehicle · Tata Elxsi"
           data-img="https://raw.githubusercontent.com/Nitz719/Nithin_Rajan_Portfolio/main/images/WIPOD.jpg"
-          data-desc="Self-driving car with LiDAR, RADAR, Stereo Camera, IMU &amp; GPS. Full sensor calibration, Arduino interfacing, LOAM simulation for real-time 3D mapping and autonomous urban navigation."
-          data-tags="ROS,C++,LiDAR,SLAM,IMU"
-          data-details="Calibrated LiDAR, RADAR, Stereo Camera, IMU and GPS in ROS|Interfaced IMU sensor with Arduino for motion data capture|Researched and simulated LOAM for real-time 3D point cloud mapping">
+          data-desc="This project focused on the development of a self-driving car, where ADAS/embedded interns were engaged in sensor fusion, sensor interfacing, calibration, and testing. Vehicle simulation was carried out using ROS2 Humble for navigation, localization, and mapping. Additionally, mentored interns in MoveIt-based manipulation, image processing, and Gazebo simulation."
+          data-tags="ROS2,C++,LiDAR,SLAM,Sensor Fusion,MoveIt"
+          data-details="Led ADAS/embedded intern team in sensor fusion, interfacing, calibration, and testing|Vehicle simulation using ROS2 Humble for navigation, localization, and mapping|Mentored interns in MoveIt manipulation, image processing, and Gazebo simulation">
           <div class="proj-img-side">
-            <img src="https://raw.githubusercontent.com/Nitz719/Nithin_Rajan_Portfolio/main/images/WIPOD.jpg" alt="Robo Taxi Level 3 Autonomous Vehicle" loading="lazy">
+            <img src="https://raw.githubusercontent.com/Nitz719/Nithin_Rajan_Portfolio/main/images/WIPOD.jpg" alt="Robo Taxi Level 3 Autonomous Vehicle Tata Elxsi" loading="lazy">
             <div class="proj-img-overlay"></div>
             <div class="proj-num-badge">02</div>
           </div>
           <div class="proj-info-side">
-            <div class="proj-cat">Autonomous Vehicle</div>
-            <div class="proj-title">Robo Taxi — Level 3 Autonomous Vehicle</div>
-            <div class="proj-desc">Self-driving car with LiDAR, RADAR, Stereo Camera, IMU &amp; GPS. Full sensor calibration, Arduino interfacing, LOAM simulation for real-time 3D mapping and autonomous urban navigation.</div>
+            <div class="proj-cat">Autonomous Vehicle · Tata Elxsi</div>
+            <div class="proj-title">Robo Taxi — Level 3 AV (Tata Elxsi)</div>
+            <div class="proj-desc">This project focused on the development of a self-driving car, where ADAS/embedded interns were engaged in sensor fusion, sensor interfacing, calibration, and testing. Vehicle simulation was carried out using ROS2 Humble for navigation, localization, and mapping. Additionally, mentored interns in MoveIt-based manipulation, image processing, and Gazebo simulation.</div>
             <div class="proj-tags">
-              <span class="proj-tag" style="background:rgba(0,212,255,.07);border:1px solid rgba(0,212,255,.25);color:var(--cy2)">ROS</span>
+              <span class="proj-tag" style="background:rgba(0,212,255,.07);border:1px solid rgba(0,212,255,.25);color:var(--cy2)">ROS2</span>
               <span class="proj-tag" style="background:rgba(255,85,0,.1);border:1px solid rgba(255,85,0,.25);color:var(--or2)">C++</span>
               <span class="proj-tag" style="background:rgba(0,255,136,.07);border:1px solid rgba(0,255,136,.25);color:var(--gr)">LiDAR</span>
               <span class="proj-tag" style="background:rgba(0,255,136,.07);border:1px solid rgba(0,255,136,.25);color:var(--gr)">SLAM</span>
-              <span class="proj-tag" style="background:rgba(0,212,255,.07);border:1px solid rgba(0,212,255,.25);color:var(--cy2)">IMU</span>
+              <span class="proj-tag" style="background:rgba(0,212,255,.07);border:1px solid rgba(0,212,255,.25);color:var(--cy2)">Sensor Fusion</span>
             </div>
             <div class="proj-actions">
               <button class="proj-link" onclick="openModal(this.closest('.proj-slide'))">View Details →</button>
               <button class="proj-link" onclick="toggleDetails(this)" style="color:var(--muted2)">Show Points ↓</button>
             </div>
             <div class="proj-details"><ul>
-              <li>Calibrated LiDAR, RADAR, Stereo Camera, IMU and GPS in ROS</li>
-              <li>Interfaced IMU sensor with Arduino for motion data capture</li>
-              <li>Researched and simulated LOAM for real-time 3D mapping</li>
+              <li>Led ADAS/embedded intern team in sensor fusion, interfacing, calibration, and testing</li>
+              <li>Vehicle simulation using ROS2 Humble for navigation, localization, and mapping</li>
+              <li>Mentored interns in MoveIt manipulation, image processing, and Gazebo simulation</li>
             </ul></div>
           </div>
         </div>
 
+        <!-- PROJECT 03: OHC Alpine — updated description -->
         <div class="proj-slide" data-cat="automotive"
           data-title="Over-Head Board Module — Alpine"
-          data-cat-label="Automotive Testing"
+          data-cat-label="Automotive Testing · Alpine"
           data-img="https://raw.githubusercontent.com/Nitz719/Nithin_Rajan_Portfolio/main/images/OHC.jpg"
-          data-desc="Led system qualification &amp; automation team. Developed CANoe panels, HIL testing with VT cards, CAPL automation in CANoe 16 and VTest Studio for Alpine OHC automotive module."
-          data-tags="CANoe,CAPL,HIL,LIN,UDS"
-          data-details="Led SYS4/SYS5 test case development and automation team|Developed CANoe panels for Ethernet, CAN, and LIN communication|Automated tests using CAPL and performed HIL testing with VT cards">
+          data-desc="The automotive project module was designed to control various functions, including interior lighting (reading and projection lights), hazard lights, seat belt reminders, humidity sensing, rain and light sensing, LiDAR, passenger airbag enable/disable, vanity lighting, and the rear-view mirror. Our team's role was to perform system validation of the OHC module."
+          data-tags="CANoe,CAPL,HIL,LIN,UDS,VTest Studio"
+          data-details="Controlled interior lighting, hazard lights, seat belt reminders, humidity and rain sensing|Managed passenger airbag enable/disable, vanity lighting, and rear-view mirror functions|Performed full system validation of the OHC module using CANoe and HIL testing">
           <div class="proj-img-side">
             <img src="https://raw.githubusercontent.com/Nitz719/Nithin_Rajan_Portfolio/main/images/OHC.jpg" alt="Over-Head Console Alpine Automotive" loading="lazy">
             <div class="proj-img-overlay"></div>
             <div class="proj-num-badge">03</div>
           </div>
           <div class="proj-info-side">
-            <div class="proj-cat">Automotive Testing</div>
+            <div class="proj-cat">Automotive Testing · Alpine</div>
             <div class="proj-title">Over-Head Board Module — Alpine</div>
-            <div class="proj-desc">Led system qualification &amp; automation team. Developed CANoe panels, HIL testing with VT cards, CAPL automation in CANoe 16 and VTest Studio for Alpine OHC automotive module.</div>
+            <div class="proj-desc">The automotive project module was designed to control various functions, including interior lighting (reading and projection lights), hazard lights, seat belt reminders, humidity sensing, rain and light sensing, LiDAR, passenger airbag enable/disable, vanity lighting, and the rear-view mirror. Our team's role was to perform system validation of the OHC module.</div>
             <div class="proj-tags">
               <span class="proj-tag" style="background:rgba(255,210,82,.07);border:1px solid rgba(255,210,82,.25);color:var(--yw)">CANoe</span>
               <span class="proj-tag" style="background:rgba(255,210,82,.07);border:1px solid rgba(255,210,82,.25);color:var(--yw)">CAPL</span>
@@ -822,29 +736,30 @@ footer{border-top:1px solid var(--bd);background:var(--bg2);padding:clamp(16px,3
               <button class="proj-link" onclick="toggleDetails(this)" style="color:var(--muted2)">Show Points ↓</button>
             </div>
             <div class="proj-details"><ul>
-              <li>Led SYS4/SYS5 test case development and automation team</li>
-              <li>Developed CANoe panels for Ethernet, CAN, and LIN communication</li>
-              <li>Automated tests using CAPL and performed HIL testing with VT cards</li>
+              <li>Module controls interior lighting, hazard lights, seat belt reminders, humidity and rain sensing</li>
+              <li>Also manages passenger airbag enable/disable, vanity lighting, and rear-view mirror</li>
+              <li>Performed complete system validation of the OHC module for Alpine</li>
             </ul></div>
           </div>
         </div>
 
+        <!-- PROJECT 04: Forvia — updated description -->
         <div class="proj-slide" data-cat="automotive"
           data-title="Infotainment CCS — Forvia, France"
-          data-cat-label="IVI · Infotainment"
+          data-cat-label="IVI · Infotainment · Forvia"
           data-img="https://raw.githubusercontent.com/Nitz719/Nithin_Rajan_Portfolio/main/images/Forvia.JPG"
-          data-desc="Led IVI system automation for Forvia France. BDD-based Python test scripts, JIRA tracking, TestRail reporting, GIT clean code with PEP standards. Cross-functional team leadership for global OEM."
-          data-tags="Python,BDD,Linux,Android"
-          data-details="Led system and software automation for IVI platform|Mentored automation team to improve productivity and quality|Managed test plans, batch runs, and TestRail reporting">
+          data-desc="The automotive project module was an infotainment system. Our team was responsible for performing both system validation and software validation of the module."
+          data-tags="Python,BDD,Linux,Android,JIRA,TestRail"
+          data-details="Infotainment system module for global automotive OEM|Performed system validation and software validation of the IVI module|Managed test execution, bug tracking with JIRA, and TestRail reporting">
           <div class="proj-img-side">
             <img src="https://raw.githubusercontent.com/Nitz719/Nithin_Rajan_Portfolio/main/images/Forvia.JPG" alt="Infotainment Forvia France IVI" loading="lazy">
             <div class="proj-img-overlay"></div>
             <div class="proj-num-badge">04</div>
           </div>
           <div class="proj-info-side">
-            <div class="proj-cat">IVI · Infotainment</div>
+            <div class="proj-cat">IVI · Infotainment · Forvia</div>
             <div class="proj-title">Infotainment CCS — Forvia, France</div>
-            <div class="proj-desc">Led IVI system automation for Forvia France. BDD-based Python test scripts, JIRA tracking, TestRail reporting, GIT clean code with PEP standards. Cross-functional team leadership for global OEM.</div>
+            <div class="proj-desc">The automotive project module was an infotainment system. Our team was responsible for performing both system validation and software validation of the module.</div>
             <div class="proj-tags">
               <span class="proj-tag" style="background:rgba(255,210,82,.07);border:1px solid rgba(255,210,82,.25);color:var(--yw)">Python</span>
               <span class="proj-tag" style="background:rgba(255,210,82,.07);border:1px solid rgba(255,210,82,.25);color:var(--yw)">BDD</span>
@@ -856,32 +771,33 @@ footer{border-top:1px solid var(--bd);background:var(--bg2);padding:clamp(16px,3
               <button class="proj-link" onclick="toggleDetails(this)" style="color:var(--muted2)">Show Points ↓</button>
             </div>
             <div class="proj-details"><ul>
-              <li>Led system and software automation for IVI platform</li>
-              <li>Mentored automation team; managed test plans and TestRail reporting</li>
-              <li>Maintained clean GIT code following PEP standards</li>
+              <li>Automotive infotainment system project for global OEM via Forvia France</li>
+              <li>Performed system validation and software validation of the IVI module</li>
+              <li>Managed test execution using BDD Python scripts, JIRA tracking, and TestRail reporting</li>
             </ul></div>
           </div>
         </div>
 
+        <!-- PROJECT 05: Wipod — Wipro — updated description -->
         <div class="proj-slide" data-cat="av"
-          data-title="Wipod — Campus Self-Driving Car"
-          data-cat-label="Autonomous · Campus EV"
+          data-title="Wipod — Campus Self-Driving Car (Wipro)"
+          data-cat-label="Autonomous · Campus EV · Wipro"
           data-img="https://raw.githubusercontent.com/Nitz719/Nithin_Rajan_Portfolio/main/images/Nano.jpg"
-          data-desc="Electric AV for intra-campus navigation. Developed ROS algorithms on Arduino, implemented 3D mapping &amp; localization, LiDAR/laser sensor calibration for real-world deployment."
-          data-tags="ROS,Arduino,LiDAR,SLAM"
-          data-details="Developed and optimised ROS algorithms on Arduino-based system|Implemented 3D mapping, localization, and navigation stack|Calibrated LiDAR and laser sensors; led client demonstrations">
+          data-desc="This project involved the development of a self-driving car designed to transport people within the Wipro Bangalore campus. Our team was responsible for system design, bare-metal programming for the motor driver modules, simulation, and on-field testing of the vehicle. The car was integrated with navigation, localization, and mapping capabilities using ROS1 Noetic."
+          data-tags="ROS1 Noetic,C++,Bare-Metal,LiDAR,SLAM,Motor Control"
+          data-details="Developed self-driving car for intra-campus transport within Wipro Bangalore campus|Responsible for system design and bare-metal programming for motor driver modules|Performed simulation and on-field testing; integrated navigation, localization, and mapping with ROS1 Noetic">
           <div class="proj-img-side">
-            <img src="https://raw.githubusercontent.com/Nitz719/Nithin_Rajan_Portfolio/main/images/Nano.jpg" alt="Wipod Campus Self Driving Car" loading="lazy">
+            <img src="https://raw.githubusercontent.com/Nitz719/Nithin_Rajan_Portfolio/main/images/Nano.jpg" alt="Wipod Campus Self Driving Car Wipro" loading="lazy">
             <div class="proj-img-overlay"></div>
             <div class="proj-num-badge">05</div>
           </div>
           <div class="proj-info-side">
-            <div class="proj-cat">Autonomous · Campus EV</div>
-            <div class="proj-title">Wipod — Campus Self-Driving Car</div>
-            <div class="proj-desc">Electric AV for intra-campus navigation. Developed ROS algorithms on Arduino, implemented 3D mapping &amp; localization, LiDAR/laser sensor calibration for real-world deployment.</div>
+            <div class="proj-cat">Autonomous · Campus EV · Wipro</div>
+            <div class="proj-title">Wipod — Campus Self-Driving Car (Wipro)</div>
+            <div class="proj-desc">This project involved the development of a self-driving car designed to transport people within the Wipro Bangalore campus. Our team was responsible for system design, bare-metal programming for the motor driver modules, simulation, and on-field testing of the vehicle. The car was integrated with navigation, localization, and mapping capabilities using ROS1 Noetic.</div>
             <div class="proj-tags">
-              <span class="proj-tag" style="background:rgba(0,212,255,.07);border:1px solid rgba(0,212,255,.25);color:var(--cy2)">ROS</span>
-              <span class="proj-tag" style="background:rgba(0,255,136,.07);border:1px solid rgba(0,255,136,.25);color:var(--gr)">Arduino</span>
+              <span class="proj-tag" style="background:rgba(0,212,255,.07);border:1px solid rgba(0,212,255,.25);color:var(--cy2)">ROS1 Noetic</span>
+              <span class="proj-tag" style="background:rgba(0,255,136,.07);border:1px solid rgba(0,255,136,.25);color:var(--gr)">Bare-Metal</span>
               <span class="proj-tag" style="background:rgba(0,255,136,.07);border:1px solid rgba(0,255,136,.25);color:var(--gr)">LiDAR</span>
               <span class="proj-tag" style="background:rgba(0,212,255,.07);border:1px solid rgba(0,212,255,.25);color:var(--cy2)">SLAM</span>
             </div>
@@ -890,29 +806,30 @@ footer{border-top:1px solid var(--bd);background:var(--bg2);padding:clamp(16px,3
               <button class="proj-link" onclick="toggleDetails(this)" style="color:var(--muted2)">Show Points ↓</button>
             </div>
             <div class="proj-details"><ul>
-              <li>Developed ROS navigation algorithms deployed on Arduino</li>
-              <li>Implemented 3D SLAM mapping and autonomous localization</li>
-              <li>Calibrated LiDAR/laser sensors for real-world outdoor use</li>
+              <li>Developed self-driving car for people transport within Wipro Bangalore campus</li>
+              <li>Handled system design and bare-metal programming for motor driver modules</li>
+              <li>Integrated ROS1 Noetic with navigation, localization, and mapping; conducted on-field testing</li>
             </ul></div>
           </div>
         </div>
 
+        <!-- PROJECT 06: High Payload — Toshiba — updated description -->
         <div class="proj-slide" data-cat="robotics"
-          data-title="Vacuum Gripper PET Robot (Furtual) — OMPL"
-          data-cat-label="Robotics · Planning"
+          data-title="High Payload Path Planning — Toshiba"
+          data-cat-label="Robotics · Path Planning · Toshiba"
           data-img="https://raw.githubusercontent.com/Nitz719/Nithin_Rajan_Portfolio/main/images/Vaccum_Gripper_robot_arm.png"
-          data-desc="Compliant path planning for heavy robotic arm. Vacuum gripper CAD to URDF conversion, OMPL trajectory optimization, Panda Arm + MoveIt integration, and full RVIZ simulation."
-          data-tags="C++,ROS,MoveIt,OMPL"
-          data-details="Created vacuum gripper in CAD and converted to URDF format|Simulated motion in RVIZ Planning Visual Tools and Gazebo|Optimised trajectory planning using OMPL planners">
+          data-desc="The objective of this project was to optimize the trajectory of the Toshiba Robot Arm with a vacuum gripper to carry heavy loads without losing grip on the object. The gripping force calculation for each type of object is added to the OMPL Planner to decide whether the object can be grasped or not."
+          data-tags="C++,ROS,MoveIt,OMPL,URDF,SolidWorks"
+          data-details="Optimised trajectory of Toshiba Robot Arm with vacuum gripper for heavy-load handling|Gripping force calculations per object type integrated into the OMPL Planner|Vacuum gripper designed in CAD, converted to URDF, and simulated in RVIZ and Gazebo">
           <div class="proj-img-side">
-            <img src="https://raw.githubusercontent.com/Nitz719/Nithin_Rajan_Portfolio/main/images/Vaccum_Gripper_robot_arm.png" alt="Vacuum Gripper PET Robot (Furtual) OMPL Path Planning" loading="lazy">
+            <img src="https://raw.githubusercontent.com/Nitz719/Nithin_Rajan_Portfolio/main/images/Vaccum_Gripper_robot_arm.png" alt="High Payload Path Planning Toshiba Robot Arm" loading="lazy">
             <div class="proj-img-overlay"></div>
             <div class="proj-num-badge">06</div>
           </div>
           <div class="proj-info-side">
-            <div class="proj-cat">Robotics · Planning</div>
-            <div class="proj-title">Vacuum Gripper PET Robot (Furtual) — OMPL</div>
-            <div class="proj-desc">Compliant path planning for heavy robotic arm. Vacuum gripper CAD to URDF conversion, OMPL trajectory optimization, Panda Arm + MoveIt integration, and full RVIZ simulation.</div>
+            <div class="proj-cat">Robotics · Path Planning · Toshiba</div>
+            <div class="proj-title">High Payload Path Planning — Toshiba</div>
+            <div class="proj-desc">The objective of this project was to optimize the trajectory of the Toshiba Robot Arm with a vacuum gripper to carry heavy loads without losing grip on the object. The gripping force calculation for each type of object is added to the OMPL Planner to decide whether the object can be grasped or not.</div>
             <div class="proj-tags">
               <span class="proj-tag" style="background:rgba(255,85,0,.1);border:1px solid rgba(255,85,0,.25);color:var(--or2)">C++</span>
               <span class="proj-tag" style="background:rgba(0,212,255,.07);border:1px solid rgba(0,212,255,.25);color:var(--cy2)">ROS</span>
@@ -924,13 +841,14 @@ footer{border-top:1px solid var(--bd);background:var(--bg2);padding:clamp(16px,3
               <button class="proj-link" onclick="toggleDetails(this)" style="color:var(--muted2)">Show Points ↓</button>
             </div>
             <div class="proj-details"><ul>
-              <li>Designed vacuum gripper CAD model and converted to URDF</li>
-              <li>Integrated with Panda Arm and MoveIt in simulation</li>
-              <li>Optimised path planning trajectories with OMPL algorithms</li>
+              <li>Optimised trajectory of Toshiba Robot Arm with vacuum gripper for heavy-load tasks</li>
+              <li>Gripping force calculations per object type integrated into OMPL Planner for grasp decisions</li>
+              <li>Vacuum gripper designed in CAD, converted to URDF, simulated in RVIZ and Gazebo</li>
             </ul></div>
           </div>
         </div>
 
+        <!-- PROJECT 07: RVC BMW — NO CHANGE -->
         <div class="proj-slide" data-cat="automotive"
           data-title="Reverse View Camera — BMW"
           data-cat-label="ADAS · BMW"
@@ -1006,8 +924,8 @@ footer{border-top:1px solid var(--bd);background:var(--bg2);padding:clamp(16px,3
       <div class="tl-item">
         <div class="tl-node"><div class="tl-node-dot"></div></div>
         <div class="tl-year">ADAS</div>
-        <div class="tl-title">Autonomous Systems — Robo Taxi, Wipod, PET Robot (Furtual)</div>
-        <div class="tl-desc">Developed self-driving vehicles with 3D SLAM mapping. Implemented MoveIt path planning and OMPL trajectory optimisation for heavy robotic arms in simulation and real hardware.</div>
+        <div class="tl-title">Autonomous Systems — Robo Taxi (Tata Elxsi), Wipod (Wipro), High Payload (Toshiba)</div>
+        <div class="tl-desc">Developed self-driving vehicles with 3D SLAM mapping for Wipro and Tata Elxsi. Implemented MoveIt path planning and OMPL trajectory optimisation for Toshiba heavy robotic arm in simulation and real hardware.</div>
         <span class="tl-chip chip-or">Robotics</span>
       </div>
       <div class="tl-item" style="margin-bottom:0">
@@ -1035,7 +953,7 @@ footer{border-top:1px solid var(--bd);background:var(--bg2);padding:clamp(16px,3
           <li>ROS for Beginners: Basics, Motion &amp; OpenCV</li>
           <li>ROS for Beginners II: Localization, Navigation &amp; SLAM</li>
           <li>ROS Navigation Stack &amp; SLAM for Custom Robots</li>
-          <li>ROS Ultimate Guide — PET Robot (Furtual)s &amp; Panda 7 DOF</li>
+          <li>ROS Ultimate Guide — Robot Arms &amp; Panda 7 DOF</li>
           <li>Self Driving and ROS — Odometry &amp; Control</li>
           <li>Robotics and ROS — Manipulators</li>
         </ul>
@@ -1207,15 +1125,7 @@ navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
 /* ── NAV ACTIVE LINK ── */
 const allSections = document.querySelectorAll('section[id]');
 const navAs = document.querySelectorAll('.nav-links a');
-new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      navAs.forEach(a => a.classList.remove('active'));
-      const l = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
-      if (l) l.classList.add('active');
-    }
-  });
-}, { threshold: .35 }).observe && allSections.forEach(s =>
+allSections.forEach(s =>
   new IntersectionObserver(entries => {
     if (entries[0].isIntersecting) {
       navAs.forEach(a => a.classList.remove('active'));
@@ -1226,14 +1136,11 @@ new IntersectionObserver(entries => {
 );
 
 /* ── REVEAL ── */
-new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); } });
-}, { threshold: .06, rootMargin: '0px 0px -30px 0px' })
-  .observe && document.querySelectorAll('.rv').forEach(el =>
-    new IntersectionObserver(entries => {
-      if (entries[0].isIntersecting) entries[0].target.classList.add('in');
-    }, { threshold: .06 }).observe(el)
-  );
+document.querySelectorAll('.rv').forEach(el =>
+  new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) entries[0].target.classList.add('in');
+  }, { threshold: .06 }).observe(el)
+);
 
 /* ── COUNT UP STATS ── */
 document.querySelectorAll('.sn[data-target]').forEach(el => {
@@ -1305,7 +1212,7 @@ document.querySelectorAll('.sn[data-target]').forEach(el => {
     { t: 'o', txt: 'Nithin Rajan — Robotics &amp; Autonomous Systems Engineer' },
     { t: 'p', txt: 'cat expertise.txt' },
     { t: 'o', txt: '→ ROS / ROS2 · SLAM · Sensor Fusion · MoveIt · Path Planning' },
-    { t: 'o', txt: '→ Autonomous Vehicles (Level 3) · PET Robot (Furtual)s · Embedded Systems' },
+    { t: 'o', txt: '→ Autonomous Vehicles (Level 3) · Robot Arms · Embedded Systems' },
     { t: 'o', txt: '→ Automotive Testing · BMW · Alpine · Forvia · BYD' },
     { t: 'p', txt: 'echo $STATUS' },
     { t: 'o', txt: '✦ Available for Global Opportunities' },
@@ -1382,9 +1289,7 @@ document.querySelectorAll('.sn[data-target]').forEach(el => {
   }, { threshold: .3 }).observe(svg);
 })();
 
-/* ══════════════════════════════════════════════
-   PROJECT THEATER — FULLY RESPONSIVE
-══════════════════════════════════════════════ */
+/* ── PROJECT THEATER ── */
 (function () {
   const stage = document.getElementById('projStage');
   const dotsWrap = document.getElementById('projDots');
@@ -1397,7 +1302,6 @@ document.querySelectorAll('.sn[data-target]').forEach(el => {
   let cur = 0;
   let autoTimer = null;
 
-  /* Build dot nav */
   function buildDots() {
     if (!dotsWrap) return;
     dotsWrap.innerHTML = '';
@@ -1416,19 +1320,9 @@ document.querySelectorAll('.sn[data-target]').forEach(el => {
     if (curEl) curEl.textContent = cur + 1;
   }
 
-  /* The key fix: make the ACTIVE slide position:relative so the stage
-     gets its natural height, while all others are position:absolute (overlaid). */
   function showSlide(idx) {
-    allSlides.forEach(s => {
-      s.style.display = 'none';
-      s.classList.remove('active', 'exit-left');
-    });
-    filtered.forEach((s, i) => {
-      s.style.display = '';          // restore display for filtered slides
-      if (i === idx) {
-        s.classList.add('active');   // position:relative via CSS
-      }
-    });
+    allSlides.forEach(s => { s.style.display = 'none'; s.classList.remove('active', 'exit-left'); });
+    filtered.forEach((s, i) => { s.style.display = ''; if (i === idx) s.classList.add('active'); });
   }
 
   function goTo(idx) {
@@ -1438,39 +1332,24 @@ document.querySelectorAll('.sn[data-target]').forEach(el => {
     old.classList.remove('active');
     setTimeout(() => { old.classList.remove('exit-left'); old.style.display = 'none'; }, 520);
     cur = (idx + filtered.length) % filtered.length;
-    const next = filtered[cur];
-    next.style.display = '';
-    requestAnimationFrame(() => next.classList.add('active'));
+    const nxt = filtered[cur];
+    nxt.style.display = '';
+    requestAnimationFrame(() => nxt.classList.add('active'));
     updateUI();
   }
 
-  function next() {
-    if (filtered.length < 2) return;
-    goTo((cur + 1) % filtered.length);
-  }
-  function prev() {
-    if (filtered.length < 2) return;
-    goTo((cur - 1 + filtered.length) % filtered.length);
-  }
+  function next() { if (filtered.length < 2) return; goTo((cur + 1) % filtered.length); }
+  function prev() { if (filtered.length < 2) return; goTo((cur - 1 + filtered.length) % filtered.length); }
 
   document.getElementById('pNext') && document.getElementById('pNext').addEventListener('click', next);
   document.getElementById('pPrev') && document.getElementById('pPrev').addEventListener('click', prev);
 
-  /* Keyboard */
-  document.addEventListener('keydown', e => {
-    if (e.key === 'ArrowRight') next();
-    if (e.key === 'ArrowLeft') prev();
-  });
+  document.addEventListener('keydown', e => { if (e.key === 'ArrowRight') next(); if (e.key === 'ArrowLeft') prev(); });
 
-  /* Touch swipe */
   let tx0 = 0;
   stage.addEventListener('touchstart', e => { tx0 = e.touches[0].clientX; }, { passive: true });
-  stage.addEventListener('touchend', e => {
-    const dx = e.changedTouches[0].clientX - tx0;
-    if (Math.abs(dx) > 40) { dx < 0 ? next() : prev(); }
-  }, { passive: true });
+  stage.addEventListener('touchend', e => { const dx = e.changedTouches[0].clientX - tx0; if (Math.abs(dx) > 40) { dx < 0 ? next() : prev(); } }, { passive: true });
 
-  /* Filter */
   document.querySelectorAll('.pf').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('.pf').forEach(b => b.classList.remove('act'));
@@ -1484,7 +1363,6 @@ document.querySelectorAll('.sn[data-target]').forEach(el => {
     });
   });
 
-  /* Auto-advance */
   function startAuto() { autoTimer = setInterval(next, 7000); }
   function stopAuto() { clearInterval(autoTimer); }
   startAuto();
@@ -1492,7 +1370,6 @@ document.querySelectorAll('.sn[data-target]').forEach(el => {
   stage.addEventListener('mouseleave', startAuto);
   stage.addEventListener('touchstart', stopAuto, { passive: true });
 
-  /* Initial state */
   allSlides.forEach(s => s.style.display = 'none');
   filtered[0].style.display = '';
   filtered[0].classList.add('active');
@@ -1558,7 +1435,7 @@ function closeModal() {
   });
 })();
 
-/* ── CONTACT FORM ── */
+/* ── CONTACT FORM (EmailJS ready) ── */
 function sendMsg() {
   const name = document.getElementById('fn').value.trim();
   const email = document.getElementById('fe').value.trim();
@@ -1566,7 +1443,6 @@ function sendMsg() {
   const btn = document.getElementById('fsub');
   const stat = document.getElementById('fstat');
 
-  /* Validate */
   let valid = true;
   [['fn','errName',!!name],['fe','errEmail',/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)],['fm','errMsg',!!msg]].forEach(([id,eid,ok]) => {
     const el = document.getElementById(id); const err = document.getElementById(eid);
@@ -1579,7 +1455,9 @@ function sendMsg() {
   document.getElementById('fsubText').textContent = 'Sending...';
   stat.style.display = 'none';
 
-  /* Simulated success — replace with EmailJS or Formspree in production */
+  /* Replace with EmailJS in production:
+  emailjs.send('YOUR_SERVICE_ID','YOUR_TEMPLATE_ID',{from_name:name,from_email:email,message:msg})
+    .then(()=>{ ... }).catch(()=>{ ... }); */
   setTimeout(() => {
     showStat('✓ Message sent! Nithin will be in touch shortly.', 'ok');
     ['fn','fe','fs','fm'].forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
@@ -1600,7 +1478,6 @@ function showStat(msg, type) {
   Object.assign(el.style, { background: v.bg, border: '1px solid ' + v.bd, color: v.c, borderRadius: '2px', padding: '12px 16px', fontFamily: "'Share Tech Mono',monospace", fontSize: '10px', letterSpacing: '1px' });
 }
 
-/* Clear errors on input */
 ['fn','fe','fm'].forEach(id => {
   const el = document.getElementById(id);
   if (el) el.addEventListener('input', () => {
