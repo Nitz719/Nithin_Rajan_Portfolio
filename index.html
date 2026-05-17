@@ -277,9 +277,11 @@ nav.scrolled{padding:12px var(--pad);background:rgba(3,3,9,0.96);backdrop-filter
 #journey{background:var(--bg2)}
 .tl-wrap{position:relative;padding-left:clamp(28px,6vw,56px)}
 .tl-spine{position:absolute;left:clamp(10px,3vw,18px);top:0;bottom:0;width:1px;background:linear-gradient(var(--cy),transparent)}
-.tl-item{position:relative;margin-bottom:44px;padding:clamp(18px,3vw,28px) clamp(16px,3vw,32px);border:1px solid var(--bd);border-radius:2px;background:var(--surf);transition:all .35s;cursor:default}
+.tl-item{position:relative;margin-bottom:44px;padding:clamp(18px,3vw,28px) clamp(16px,3vw,32px);border:1px solid var(--bd);border-radius:4px;background:linear-gradient(135deg,rgba(0,212,255,0.05) 0%,rgba(7,7,15,0.7) 50%,rgba(255,85,0,0.04) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 4px 24px rgba(0,0,0,0.4),inset 0 1px 0 rgba(255,255,255,0.06);transition:all .35s;cursor:default;overflow:hidden}
+.tl-item::before{content:'';position:absolute;inset:0;border-radius:4px;background:radial-gradient(ellipse 80% 60% at 0% 0%,rgba(0,212,255,0.07),transparent 60%),radial-gradient(ellipse 60% 50% at 100% 100%,rgba(255,85,0,0.05),transparent 60%);pointer-events:none;z-index:0}
+.tl-item>*{position:relative;z-index:1}
 .tl-item:last-child{margin-bottom:0}
-.tl-item:hover{border-color:rgba(0,212,255,.25);background:rgba(0,212,255,.02)}
+.tl-item:hover{border-color:rgba(0,212,255,.35);background:linear-gradient(135deg,rgba(0,212,255,0.09) 0%,rgba(7,7,15,0.75) 50%,rgba(255,85,0,0.07) 100%);box-shadow:0 8px 40px rgba(0,0,0,0.5),0 0 0 1px rgba(0,212,255,0.1),inset 0 1px 0 rgba(255,255,255,0.09);transform:translateX(4px)}
 .tl-node{position:absolute;left:clamp(-26px,-5vw,-40px);top:clamp(18px,3vw,28px);width:clamp(14px,2.5vw,20px);height:clamp(14px,2.5vw,20px);border-radius:50%;border:2px solid var(--cy);background:var(--bg2);display:flex;align-items:center;justify-content:center}
 .tl-node-dot{width:6px;height:6px;border-radius:50%;background:var(--cy);animation:pulse 2s ease-in-out infinite}
 .tl-year{font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:3px;color:var(--cy);margin-bottom:8px;text-transform:uppercase}
@@ -289,9 +291,7 @@ nav.scrolled{padding:12px var(--pad);background:rgba(3,3,9,0.96);backdrop-filter
 .chip-cy{border:1px solid rgba(0,212,255,.4);color:var(--cy);background:rgba(0,212,255,.07)}
 .chip-or{border:1px solid rgba(255,85,0,.4);color:var(--or);background:rgba(255,85,0,.07)}
 .chip-gr{border:1px solid rgba(0,255,136,.4);color:var(--gr);background:rgba(0,255,136,.07)}
-.tl-imgs{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
-.tl-img{height:72px;width:auto;max-width:130px;object-fit:cover;border-radius:3px;border:1px solid var(--bd);transition:all .3s;filter:brightness(0.8) saturate(0.9)}
-.tl-img:hover{filter:brightness(1) saturate(1.1);border-color:rgba(0,212,255,.35);transform:scale(1.04)}
+
 
 /* ═══ COURSES ═══ */
 #courses{background:var(--bg)}
@@ -1057,11 +1057,7 @@ footer{border-top:1px solid var(--bd);background:var(--bg2);padding:clamp(16px,3
         <div class="tl-node"><div class="tl-node-dot"></div></div>
         <div class="tl-year">Academic Foundation</div>
         <div class="tl-title">M.Tech Robotics — SRM University (GPA 8.73)</div>
-        <div class="tl-imgs">
-          <img class="tl-img" src="https://images.unsplash.com/photo-1562774053-701939374585?w=220&q=80" alt="University campus">
-          <img class="tl-img" src="https://images.unsplash.com/photo-1581092921461-39b9d08a9b21?w=220&q=80" alt="Robotics research lab">
-          <img class="tl-img" src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=220&q=80" alt="Study and engineering">
-        </div>
+
         <span class="tl-chip chip-cy">Education</span>
       </div>
 
@@ -1070,11 +1066,7 @@ footer{border-top:1px solid var(--bd);background:var(--bg2);padding:clamp(16px,3
         <div class="tl-node"><div class="tl-node-dot"></div></div>
         <div class="tl-year">Automotive</div>
         <div class="tl-title">Systems Engineer — Over-Head Board Module, Infotainment CCS, BYD Project &amp; ARM Optimization for Automotive Modules</div>
-        <div class="tl-imgs">
-          <img class="tl-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=220&q=80" alt="Automotive ECU testing">
-          <img class="tl-img" src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=220&q=80" alt="Car interior electronics">
-          <img class="tl-img" src="https://images.unsplash.com/photo-1549317661-bd32c8ce0729?w=220&q=80" alt="CAN bus automotive">
-        </div>
+
         <span class="tl-chip chip-gr">Industry</span>
       </div>
 
@@ -1083,11 +1075,7 @@ footer{border-top:1px solid var(--bd);background:var(--bg2);padding:clamp(16px,3
         <div class="tl-node"><div class="tl-node-dot"></div></div>
         <div class="tl-year">ADAS</div>
         <div class="tl-title">Autonomous Systems — UCAP, Reverse View Camera</div>
-        <div class="tl-imgs">
-          <img class="tl-img" src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=220&q=80" alt="ADAS camera sensors">
-          <img class="tl-img" src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=220&q=80" alt="Parking assist system">
-          <img class="tl-img" src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=220&q=80" alt="Embedded automotive platform">
-        </div>
+
         <span class="tl-chip chip-gr">Industry</span>
       </div>
 
@@ -1096,11 +1084,7 @@ footer{border-top:1px solid var(--bd);background:var(--bg2);padding:clamp(16px,3
         <div class="tl-node"><div class="tl-node-dot"></div></div>
         <div class="tl-year">Robotics</div>
         <div class="tl-title">Robotics Engineer - Pet Robot, Robotics Engineer - Robo Taxi, Robotics Engineer - Wipod — Campus Self-Driving Car, Robotics Engineer - High Payload Path Planning &amp; Robotics Engineer - Educational Bots</div>
-        <div class="tl-imgs">
-          <img class="tl-img" src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=220&q=80" alt="Humanoid robot">
-          <img class="tl-img" src="https://images.unsplash.com/photo-1561557944-6e7860d1a7eb?w=220&q=80" alt="Autonomous vehicle">
-          <img class="tl-img" src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=220&q=80" alt="Robot arm industrial">
-        </div>
+
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
           <span class="tl-chip chip-cy">Education</span>
           <span class="tl-chip chip-or">Industry</span>
@@ -1112,10 +1096,7 @@ footer{border-top:1px solid var(--bd);background:var(--bg2);padding:clamp(16px,3
         <div class="tl-node"><div class="tl-node-dot"></div></div>
         <div class="tl-year">Recent</div>
         <div class="tl-title">Automation Testing Lead — Alpine OHC &amp; Forvia IVI</div>
-        <div class="tl-imgs">
-          <img class="tl-img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=220&q=80" alt="Automated testing dashboard">
-          <img class="tl-img" src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=220&q=80" alt="Embedded circuit board">
-        </div>
+
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
           <span class="tl-chip chip-cy">Testing Lead</span>
           <span class="tl-chip chip-gr">Industry</span>
@@ -1127,11 +1108,7 @@ footer{border-top:1px solid var(--bd);background:var(--bg2);padding:clamp(16px,3
         <div class="tl-node"><div class="tl-node-dot"></div></div>
         <div class="tl-year">Recent</div>
         <div class="tl-title">Robotics Development &amp; Validation Engineer - Pet Robot Development and Simulation in ROS2</div>
-        <div class="tl-imgs">
-          <img class="tl-img" src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=220&q=80" alt="ROS2 robot development">
-          <img class="tl-img" src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=220&q=80" alt="Simulation AI environment">
-          <img class="tl-img" src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=220&q=80" alt="Software development">
-        </div>
+
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
           <span class="tl-chip chip-or">Autonomous</span>
           <span class="tl-chip chip-gr">Freelance</span>
