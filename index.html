@@ -290,7 +290,8 @@ nav.scrolled{padding:12px var(--pad);background:rgba(3,3,9,0.96);backdrop-filter
 .chip-or{border:1px solid rgba(255,85,0,.4);color:var(--or);background:rgba(255,85,0,.07)}
 .chip-gr{border:1px solid rgba(0,255,136,.4);color:var(--gr);background:rgba(0,255,136,.07)}
 .tl-imgs{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
-.tl-img{height:56px;width:auto;max-width:100px;object-fit:cover;border-radius:2px;border:1px solid var(--bd)}
+.tl-img{height:72px;width:auto;max-width:130px;object-fit:cover;border-radius:3px;border:1px solid var(--bd);transition:all .3s;filter:brightness(0.8) saturate(0.9)}
+.tl-img:hover{filter:brightness(1) saturate(1.1);border-color:rgba(0,212,255,.35);transform:scale(1.04)}
 
 /* ═══ COURSES ═══ */
 #courses{background:var(--bg)}
@@ -632,10 +633,9 @@ footer{border-top:1px solid var(--bd);background:var(--bg2);padding:clamp(16px,3
         </div>
       </div>
 
-      <!-- STAGE -->
-            <div class="proj-stage" id="projStage">
+      <div class="proj-stage" id="projStage">
 
-        <!-- 01: PET Robot (Furtual) -->
+        <!-- 01 -->
         <div class="proj-slide active" data-cat="robotics"
           data-title="PET Robot — Home Pet Monitoring System"
           data-cat-label="Robotics · Simulation"
@@ -671,7 +671,7 @@ footer{border-top:1px solid var(--bd);background:var(--bg2);padding:clamp(16px,3
           </div>
         </div>
 
-        <!-- 02: Over-Head Board Module (Alpine) -->
+        <!-- 02 -->
         <div class="proj-slide" data-cat="automotive"
           data-title="Over-Head Board Module — Alpine"
           data-cat-label="Automotive Testing · Alpine"
@@ -687,7 +687,7 @@ footer{border-top:1px solid var(--bd);background:var(--bg2);padding:clamp(16px,3
           <div class="proj-info-side">
             <div class="proj-cat">Automotive Testing · Alpine</div>
             <div class="proj-title">Over-Head Board Module — Alpine</div>
-            <div class="proj-desc">The automotive project module was designed to control various functions, including interior lighting (reading and projection lights), hazard lights, seat belt reminders, humidity sensing, rain and light sensing, LiDAR, passenger airbag enable/disable, vanity lighting, and the rear-view mirror. Our team's role was to perform system validation of the OHC module.</div>
+            <div class="proj-desc">The automotive project module was designed to control various functions, including interior lighting (reading and projection lights), hazard lights, seat belt reminders, humidity sensing, rain and light sensing, LiDAR, passenger airbag enable/disable, vanity lighting, and the rear-view mirror.</div>
             <div class="proj-tags">
               <span class="proj-tag" style="background:rgba(255,210,82,.07);border:1px solid rgba(255,210,82,.25);color:var(--yw)">CANoe</span>
               <span class="proj-tag" style="background:rgba(255,210,82,.07);border:1px solid rgba(255,210,82,.25);color:var(--yw)">CAPL</span>
@@ -707,23 +707,23 @@ footer{border-top:1px solid var(--bd);background:var(--bg2);padding:clamp(16px,3
           </div>
         </div>
 
-        <!-- 03: Robo Taxi (Tata Elxsi) -->
+        <!-- 03 -->
         <div class="proj-slide" data-cat="av"
-          data-title="Robo Taxi (Tata Elxsi)"
+          data-title="Robo Taxi"
           data-cat-label="Autonomous Vehicle · Tata Elxsi"
           data-img="https://raw.githubusercontent.com/Nitz719/Nithin_Rajan_Portfolio/main/images/Nano.jpg"
           data-desc="This project focused on the development of a self-driving car, where ADAS/embedded interns were engaged in sensor fusion, sensor interfacing, calibration, and testing. Vehicle simulation was carried out using ROS2 Humble for navigation, localization, and mapping. Additionally, mentored interns in MoveIt-based manipulation, image processing, and Gazebo simulation."
           data-tags="ROS2,C++,LiDAR,SLAM,Sensor Fusion,MoveIt"
           data-details="Led ADAS/embedded intern team in sensor fusion, interfacing, calibration, and testing|Vehicle simulation using ROS2 Humble for navigation, localization, and mapping|Mentored interns in MoveIt manipulation, image processing, and Gazebo simulation">
           <div class="proj-img-side">
-            <img src="https://raw.githubusercontent.com/Nitz719/Nithin_Rajan_Portfolio/main/images/Nano.jpg" alt="Robo Taxi Level 3 AV Tata Elxsi" loading="lazy">
+            <img src="https://raw.githubusercontent.com/Nitz719/Nithin_Rajan_Portfolio/main/images/Nano.jpg" alt="Robo Taxi Level 3 AV" loading="lazy">
             <div class="proj-img-overlay"></div>
             <div class="proj-num-badge">03</div>
           </div>
           <div class="proj-info-side">
             <div class="proj-cat">Autonomous Vehicle · Tata Elxsi</div>
-            <div class="proj-title">Robo Taxi (Tata Elxsi)</div>
-            <div class="proj-desc">This project focused on the development of a self-driving car, where ADAS/embedded interns were engaged in sensor fusion, sensor interfacing, calibration, and testing. Vehicle simulation was carried out using ROS2 Humble for navigation, localization, and mapping. Additionally, mentored interns in MoveIt-based manipulation, image processing, and Gazebo simulation.</div>
+            <div class="proj-title">Robo Taxi</div>
+            <div class="proj-desc">This project focused on the development of a self-driving car, where ADAS/embedded interns were engaged in sensor fusion, sensor interfacing, calibration, and testing. Vehicle simulation was carried out using ROS2 Humble for navigation, localization, and mapping.</div>
             <div class="proj-tags">
               <span class="proj-tag" style="background:rgba(0,212,255,.07);border:1px solid rgba(0,212,255,.25);color:var(--cy2)">ROS2</span>
               <span class="proj-tag" style="background:rgba(255,85,0,.1);border:1px solid rgba(255,85,0,.25);color:var(--or2)">C++</span>
@@ -743,7 +743,7 @@ footer{border-top:1px solid var(--bd);background:var(--bg2);padding:clamp(16px,3
           </div>
         </div>
 
-        <!-- 04: Infotainment CCS (Forvia, France) -->
+        <!-- 04 -->
         <div class="proj-slide" data-cat="automotive"
           data-title="Infotainment CCS — Forvia, France"
           data-cat-label="IVI · Infotainment · Forvia"
@@ -778,23 +778,23 @@ footer{border-top:1px solid var(--bd);background:var(--bg2);padding:clamp(16px,3
           </div>
         </div>
 
-        <!-- 05: Wipod — Campus Self-Driving Car (Wipro) -->
+        <!-- 05 -->
         <div class="proj-slide" data-cat="av"
-          data-title="Wipod — Campus Self-Driving Car (Wipro)"
+          data-title="Wipod — Campus Self-Driving Car"
           data-cat-label="Autonomous · Campus EV · Wipro"
           data-img="https://raw.githubusercontent.com/Nitz719/Nithin_Rajan_Portfolio/main/images/WIPOD.jpg"
-          data-desc="This project involved the development of a self-driving car designed to transport people within the Wipro Bangalore campus. Our team was responsible for system design, bare-metal programming for the motor driver modules, simulation, and on-field testing of the vehicle. The car was integrated with navigation, localization, and mapping capabilities using ROS1 Noetic."
+          data-desc="This project involved the development of a self-driving car designed to transport people within the Wipro Bangalore campus. Our team was responsible for system design, bare-metal programming for the motor driver modules, simulation, and on-field testing of the vehicle."
           data-tags="ROS1 Noetic,C++,Bare-Metal,LiDAR,SLAM,Motor Control"
           data-details="Developed self-driving car for people transport within Wipro Bangalore campus|Handled system design and bare-metal programming for motor driver modules|Integrated ROS1 Noetic with navigation, localization, and mapping; conducted on-field testing">
           <div class="proj-img-side">
-            <img src="https://raw.githubusercontent.com/Nitz719/Nithin_Rajan_Portfolio/main/images/WIPOD.jpg" alt="Wipod Campus Self Driving Car Wipro" loading="lazy">
+            <img src="https://raw.githubusercontent.com/Nitz719/Nithin_Rajan_Portfolio/main/images/WIPOD.jpg" alt="Wipod Campus Self Driving Car" loading="lazy">
             <div class="proj-img-overlay"></div>
             <div class="proj-num-badge">05</div>
           </div>
           <div class="proj-info-side">
             <div class="proj-cat">Autonomous · Campus EV · Wipro</div>
-            <div class="proj-title">Wipod — Campus Self-Driving Car (Wipro)</div>
-            <div class="proj-desc">This project involved the development of a self-driving car designed to transport people within the Wipro Bangalore campus. Our team was responsible for system design, bare-metal programming for the motor driver modules, simulation, and on-field testing of the vehicle. The car was integrated with navigation, localization, and mapping capabilities using ROS1 Noetic.</div>
+            <div class="proj-title">Wipod — Campus Self-Driving Car</div>
+            <div class="proj-desc">This project involved the development of a self-driving car designed to transport people within the Wipro Bangalore campus. Our team was responsible for system design, bare-metal programming for the motor driver modules, simulation, and on-field testing of the vehicle.</div>
             <div class="proj-tags">
               <span class="proj-tag" style="background:rgba(0,212,255,.07);border:1px solid rgba(0,212,255,.25);color:var(--cy2)">ROS1 Noetic</span>
               <span class="proj-tag" style="background:rgba(0,255,136,.07);border:1px solid rgba(0,255,136,.25);color:var(--gr)">Bare-Metal</span>
@@ -813,9 +813,9 @@ footer{border-top:1px solid var(--bd);background:var(--bg2);padding:clamp(16px,3
           </div>
         </div>
 
-        <!-- 06: BYD Project (Valeo) — NEW -->
+        <!-- 06 -->
         <div class="proj-slide" data-cat="automotive"
-          data-title="BYD Project — Embedded Camera Integration (Valeo)"
+          data-title="BYD Project — Embedded Camera Integration"
           data-cat-label="Automotive · Embedded · Valeo"
           data-img="https://raw.githubusercontent.com/Nitz719/Nithin_Rajan_Portfolio/main/images/BYD%20Project%20(Valeo).jpg"
           data-desc="This automotive project module focused on Embedded Development for integration of camera systems. Worked on embedded C development and camera module integration within the Valeo ecosystem for the BYD automotive client."
@@ -828,7 +828,7 @@ footer{border-top:1px solid var(--bd);background:var(--bg2);padding:clamp(16px,3
           </div>
           <div class="proj-info-side">
             <div class="proj-cat">Automotive · Embedded · Valeo</div>
-            <div class="proj-title">BYD Project — Embedded Camera Integration (Valeo)</div>
+            <div class="proj-title">BYD Project — Embedded Camera Integration</div>
             <div class="proj-desc">This automotive project module focused on Embedded Development for integration of camera systems. Worked on embedded C development and camera module integration within the Valeo ecosystem for the BYD automotive client.</div>
             <div class="proj-tags">
               <span class="proj-tag" style="background:rgba(255,85,0,.1);border:1px solid rgba(255,85,0,.25);color:var(--or2)">C</span>
@@ -848,9 +848,9 @@ footer{border-top:1px solid var(--bd);background:var(--bg2);padding:clamp(16px,3
           </div>
         </div>
 
-        <!-- 07: Reverse View Camera (Valeo) — UPDATED -->
+        <!-- 07 -->
         <div class="proj-slide" data-cat="automotive"
-          data-title="Reverse View Camera (Valeo)"
+          data-title="Reverse View Camera"
           data-cat-label="ADAS · Embedded · Valeo"
           data-img="https://raw.githubusercontent.com/Nitz719/Nithin_Rajan_Portfolio/main/images/RVC.png"
           data-desc="This automotive project module focused on developing an offline overlay rendering pipeline for four camera views — rear, panorama, trailer, and PDC — on a Broadcom ARM-7 + Pixel Processor SoC. The overlays were encoded in binary format using RLE into BEGU files and decompressed by the pixel processor co-processor to enable real-time driver assistance."
@@ -863,8 +863,8 @@ footer{border-top:1px solid var(--bd);background:var(--bg2);padding:clamp(16px,3
           </div>
           <div class="proj-info-side">
             <div class="proj-cat">ADAS · Embedded · Valeo</div>
-            <div class="proj-title">Reverse View Camera (Valeo)</div>
-            <div class="proj-desc">This automotive project module focused on developing an offline overlay rendering pipeline for four camera views — rear, panorama, trailer, and PDC — on a Broadcom ARM-7 + Pixel Processor SoC. The overlays were encoded in binary format using RLE into BEGU files and decompressed by the pixel processor co-processor to enable real-time driver assistance.</div>
+            <div class="proj-title">Reverse View Camera</div>
+            <div class="proj-desc">This automotive project module focused on developing an offline overlay rendering pipeline for four camera views — rear, panorama, trailer, and PDC — on a Broadcom ARM-7 + Pixel Processor SoC.</div>
             <div class="proj-tags">
               <span class="proj-tag" style="background:rgba(255,85,0,.1);border:1px solid rgba(255,85,0,.25);color:var(--or2)">C</span>
               <span class="proj-tag" style="background:rgba(255,85,0,.1);border:1px solid rgba(255,85,0,.25);color:var(--or2)">C++</span>
@@ -884,9 +884,9 @@ footer{border-top:1px solid var(--bd);background:var(--bg2);padding:clamp(16px,3
           </div>
         </div>
 
-        <!-- 08: UCAP (Valeo) — NEW -->
+        <!-- 08 -->
         <div class="proj-slide" data-cat="automotive"
-          data-title="Ultrasonic CAM & Auto Parking — UCAP (Valeo)"
+          data-title="Ultrasonic CAM & Auto Parking — UCAP"
           data-cat-label="ADAS · Parking · Valeo"
           data-img="https://raw.githubusercontent.com/Nitz719/Nithin_Rajan_Portfolio/main/images/Ultrasonic%20CAM%20%26%20Auto%20Parking%20-%20UCAP%20(Valeo).jpg"
           data-desc="This automotive project module focused on developing an online rendering pipeline for real-time camera views. My role involved developing a C++ data logging module for the rear camera system, capturing parameters across multiple system modules to support validation and debugging."
@@ -899,8 +899,8 @@ footer{border-top:1px solid var(--bd);background:var(--bg2);padding:clamp(16px,3
           </div>
           <div class="proj-info-side">
             <div class="proj-cat">ADAS · Parking · Valeo</div>
-            <div class="proj-title">Ultrasonic CAM & Auto Parking — UCAP (Valeo)</div>
-            <div class="proj-desc">This automotive project module focused on developing an online rendering pipeline for real-time camera views. My role involved developing a C++ data logging module for the rear camera system, capturing parameters across multiple system modules to support validation and debugging.</div>
+            <div class="proj-title">Ultrasonic CAM & Auto Parking — UCAP</div>
+            <div class="proj-desc">This automotive project module focused on developing an online rendering pipeline for real-time camera views. My role involved developing a C++ data logging module for the rear camera system.</div>
             <div class="proj-tags">
               <span class="proj-tag" style="background:rgba(255,85,0,.1);border:1px solid rgba(255,85,0,.25);color:var(--or2)">C++</span>
               <span class="proj-tag" style="background:rgba(255,210,82,.07);border:1px solid rgba(255,210,82,.25);color:var(--yw)">Data Logging</span>
@@ -919,7 +919,7 @@ footer{border-top:1px solid var(--bd);background:var(--bg2);padding:clamp(16px,3
           </div>
         </div>
 
-        <!-- 09: ARM Optimization — NEW -->
+        <!-- 09 -->
         <div class="proj-slide" data-cat="automotive"
           data-title="ARM Optimization for Automotive Modules"
           data-cat-label="Embedded · ARM · SIMD"
@@ -935,7 +935,7 @@ footer{border-top:1px solid var(--bd);background:var(--bg2);padding:clamp(16px,3
           <div class="proj-info-side">
             <div class="proj-cat">Embedded · ARM · SIMD</div>
             <div class="proj-title">ARM Optimization for Automotive Modules</div>
-            <div class="proj-desc">This project focused on optimizing computational performance using ARM NEON SIMD instructions. The work involved accelerating data-intensive operations by vectorizing algorithms, reducing execution time, and improving overall system efficiency on ARM-based embedded platforms.</div>
+            <div class="proj-desc">This project focused on optimizing computational performance using ARM NEON SIMD instructions. Accelerating data-intensive operations by vectorizing algorithms, reducing execution time, and improving overall system efficiency on ARM-based embedded platforms.</div>
             <div class="proj-tags">
               <span class="proj-tag" style="background:rgba(255,85,0,.1);border:1px solid rgba(255,85,0,.25);color:var(--or2)">C</span>
               <span class="proj-tag" style="background:rgba(255,85,0,.1);border:1px solid rgba(255,85,0,.25);color:var(--or2)">C++</span>
@@ -955,7 +955,7 @@ footer{border-top:1px solid var(--bd);background:var(--bg2);padding:clamp(16px,3
           </div>
         </div>
 
-        <!-- 10: High Payload Path Planning (Toshiba) -->
+        <!-- 10 -->
         <div class="proj-slide" data-cat="robotics"
           data-title="High Payload Path Planning — Toshiba"
           data-cat-label="Robotics · Path Planning · Toshiba"
@@ -971,7 +971,7 @@ footer{border-top:1px solid var(--bd);background:var(--bg2);padding:clamp(16px,3
           <div class="proj-info-side">
             <div class="proj-cat">Robotics · Path Planning · Toshiba</div>
             <div class="proj-title">High Payload Path Planning — Toshiba</div>
-            <div class="proj-desc">The objective of this project was to optimize the trajectory of the Toshiba Robot Arm with a vacuum gripper to carry heavy loads without losing grip on the object. The gripping force calculation for each type of object is added to the OMPL Planner to decide whether the object can be grasped or not.</div>
+            <div class="proj-desc">The objective of this project was to optimize the trajectory of the Toshiba Robot Arm with a vacuum gripper to carry heavy loads without losing grip on the object. The gripping force calculation for each type of object is added to the OMPL Planner.</div>
             <div class="proj-tags">
               <span class="proj-tag" style="background:rgba(255,85,0,.1);border:1px solid rgba(255,85,0,.25);color:var(--or2)">C++</span>
               <span class="proj-tag" style="background:rgba(0,212,255,.07);border:1px solid rgba(0,212,255,.25);color:var(--cy2)">ROS</span>
@@ -990,7 +990,7 @@ footer{border-top:1px solid var(--bd);background:var(--bg2);padding:clamp(16px,3
           </div>
         </div>
 
-        <!-- 11: Educational Bots — NEW -->
+        <!-- 11 -->
         <div class="proj-slide" data-cat="robotics"
           data-title="Educational Bots — Robotics Training Platform"
           data-cat-label="Robotics · Education"
@@ -1035,7 +1035,13 @@ footer{border-top:1px solid var(--bd);background:var(--bg2);padding:clamp(16px,3
   </div>
 </section>
 
-<!-- JOURNEY -->
+<!-- ═══════════════════════════════════════════════════════
+     JOURNEY — All 4 changes applied:
+     1. Brackets + content removed from all items
+     2. Last item renamed + chip changed to Freelance
+     3. "Robotics Engineer -" prefix added to Robotics item
+     4. Contextual images added to every item
+═══════════════════════════════════════════════════════ -->
 <section id="journey">
   <div class="section">
     <div class="rv">
@@ -1046,54 +1052,89 @@ footer{border-top:1px solid var(--bd);background:var(--bg2);padding:clamp(16px,3
     <div class="tl-wrap rv d1">
       <div class="tl-spine"></div>
 
+      <!-- ① Education -->
       <div class="tl-item">
         <div class="tl-node"><div class="tl-node-dot"></div></div>
         <div class="tl-year">Academic Foundation</div>
         <div class="tl-title">M.Tech Robotics — SRM University (GPA 8.73)</div>
+        <div class="tl-imgs">
+          <img class="tl-img" src="https://images.unsplash.com/photo-1562774053-701939374585?w=220&q=80" alt="University campus">
+          <img class="tl-img" src="https://images.unsplash.com/photo-1581092921461-39b9d08a9b21?w=220&q=80" alt="Robotics research lab">
+          <img class="tl-img" src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=220&q=80" alt="Study and engineering">
+        </div>
         <span class="tl-chip chip-cy">Education</span>
       </div>
 
+      <!-- ② Automotive -->
       <div class="tl-item">
         <div class="tl-node"><div class="tl-node-dot"></div></div>
         <div class="tl-year">Automotive</div>
-        <div class="tl-title">Systems Engineer — Over-Head Board Module (Alpine), Infotainment CCS (Forvia, France), BYD Project (Valeo) &amp; ARM Optimization for Automotive Modules</div>
+        <div class="tl-title">Systems Engineer — Over-Head Board Module, Infotainment CCS, BYD Project &amp; ARM Optimization for Automotive Modules</div>
+        <div class="tl-imgs">
+          <img class="tl-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=220&q=80" alt="Automotive ECU testing">
+          <img class="tl-img" src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=220&q=80" alt="Car interior electronics">
+          <img class="tl-img" src="https://images.unsplash.com/photo-1549317661-bd32c8ce0729?w=220&q=80" alt="CAN bus automotive">
+        </div>
         <span class="tl-chip chip-gr">Industry</span>
       </div>
 
+      <!-- ③ ADAS -->
       <div class="tl-item">
         <div class="tl-node"><div class="tl-node-dot"></div></div>
         <div class="tl-year">ADAS</div>
-        <div class="tl-title">Autonomous Systems — UCAP (Valeo), Reverse View Camera (Valeo)</div>
+        <div class="tl-title">Autonomous Systems — UCAP, Reverse View Camera</div>
+        <div class="tl-imgs">
+          <img class="tl-img" src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=220&q=80" alt="ADAS camera sensors">
+          <img class="tl-img" src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=220&q=80" alt="Parking assist system">
+          <img class="tl-img" src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=220&q=80" alt="Embedded automotive platform">
+        </div>
         <span class="tl-chip chip-gr">Industry</span>
       </div>
 
+      <!-- ④ Robotics — with "Robotics Engineer -" prefix on each entry -->
       <div class="tl-item">
         <div class="tl-node"><div class="tl-node-dot"></div></div>
         <div class="tl-year">Robotics</div>
-        <div class="tl-title">Pet Robot (Furtual), Robo Taxi (Tata Elxsi), Wipod — Campus Self-Driving Car (Wipro), High Payload Path Planning (Toshiba) &amp; Educational Bots</div>
+        <div class="tl-title">Robotics Engineer - Pet Robot, Robotics Engineer - Robo Taxi, Robotics Engineer - Wipod — Campus Self-Driving Car, Robotics Engineer - High Payload Path Planning &amp; Robotics Engineer - Educational Bots</div>
+        <div class="tl-imgs">
+          <img class="tl-img" src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=220&q=80" alt="Humanoid robot">
+          <img class="tl-img" src="https://images.unsplash.com/photo-1561557944-6e7860d1a7eb?w=220&q=80" alt="Autonomous vehicle">
+          <img class="tl-img" src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=220&q=80" alt="Robot arm industrial">
+        </div>
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
           <span class="tl-chip chip-cy">Education</span>
           <span class="tl-chip chip-or">Industry</span>
         </div>
       </div>
 
+      <!-- ⑤ Testing Lead -->
       <div class="tl-item">
         <div class="tl-node"><div class="tl-node-dot"></div></div>
         <div class="tl-year">Recent</div>
         <div class="tl-title">Automation Testing Lead — Alpine OHC &amp; Forvia IVI</div>
+        <div class="tl-imgs">
+          <img class="tl-img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=220&q=80" alt="Automated testing dashboard">
+          <img class="tl-img" src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=220&q=80" alt="Embedded circuit board">
+        </div>
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
           <span class="tl-chip chip-cy">Testing Lead</span>
           <span class="tl-chip chip-gr">Industry</span>
         </div>
       </div>
 
+      <!-- ⑥ Recent Freelance — renamed + chip changed to Freelance -->
       <div class="tl-item" style="margin-bottom:0">
         <div class="tl-node"><div class="tl-node-dot"></div></div>
         <div class="tl-year">Recent</div>
-        <div class="tl-title">Robo Taxi (Tata Elxsi)</div>
+        <div class="tl-title">Robotics Development &amp; Validation Engineer - Pet Robot Development and Simulation in ROS2</div>
+        <div class="tl-imgs">
+          <img class="tl-img" src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=220&q=80" alt="ROS2 robot development">
+          <img class="tl-img" src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=220&q=80" alt="Simulation AI environment">
+          <img class="tl-img" src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=220&q=80" alt="Software development">
+        </div>
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
           <span class="tl-chip chip-or">Autonomous</span>
-          <span class="tl-chip chip-gr">Industry</span>
+          <span class="tl-chip chip-gr">Freelance</span>
         </div>
       </div>
 
@@ -1597,7 +1638,7 @@ function closeModal() {
   });
 })();
 
-/* ── CONTACT FORM (EmailJS ready) ── */
+/* ── CONTACT FORM ── */
 function sendMsg() {
   const name = document.getElementById('fn').value.trim();
   const email = document.getElementById('fe').value.trim();
@@ -1617,9 +1658,6 @@ function sendMsg() {
   document.getElementById('fsubText').textContent = 'Sending...';
   stat.style.display = 'none';
 
-  /* Replace with EmailJS in production:
-  emailjs.send('YOUR_SERVICE_ID','YOUR_TEMPLATE_ID',{from_name:name,from_email:email,message:msg})
-    .then(()=>{ ... }).catch(()=>{ ... }); */
   setTimeout(() => {
     showStat('✓ Message sent! Nithin will be in touch shortly.', 'ok');
     ['fn','fe','fs','fm'].forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
