@@ -196,7 +196,7 @@ nav.scrolled{padding:12px var(--pad);background:rgba(3,3,9,0.96);backdrop-filter
 .skills-wrap{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
 .radar-col{display:flex;justify-content:center}
 #radarSVG{width:100%;max-width:380px;height:auto}
-.radar-label{font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:1px;fill:var(--muted2)}
+.radar-label{font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:.5px;fill:var(--text);font-weight:500}
 .stack-section{margin-bottom:28px}
 .stack-title{font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--cy);text-transform:uppercase;margin-bottom:12px}
 .tag-cloud{display:flex;flex-wrap:wrap;gap:7px}
@@ -452,7 +452,7 @@ footer{border-top:1px solid var(--bd);background:var(--bg2);padding:clamp(16px,3
   <div class="hero-system-badge" aria-hidden="true">
     <div class="sys-node"><div class="sys-label">Status</div><div class="sys-val gr">ONLINE</div></div>
     <div class="sys-node"><div class="sys-label">Speciality</div><div class="sys-val cy">ROS2</div></div>
-    <div class="sys-node"><div class="sys-label">Experience</div><div class="sys-val or">5+ Yrs</div></div>
+    <div class="sys-node"><div class="sys-label">Experience</div><div class="sys-val or">8+ Yrs</div></div>
   </div>
   <div class="hero-scroll" aria-hidden="true">
     <div class="scroll-track"></div>
@@ -499,7 +499,7 @@ footer{border-top:1px solid var(--bd);background:var(--bg2);padding:clamp(16px,3
 <!-- STATS -->
 <div class="stats-row">
   <div class="stat-cell rv"><div class="sn" data-target="10">0</div><div class="sl">Projects Delivered</div></div>
-  <div class="stat-cell rv d1"><div class="sn" data-target="5">0</div><div class="sl">Years Experience</div></div>
+  <div class="stat-cell rv d1"><div class="sn" data-target="8">0</div><div class="sl">Years Experience</div></div>
   <div class="stat-cell rv d2"><div class="sn" data-target="3">0</div><div class="sl">Industry Sectors</div></div>
   <div class="stat-cell rv d3"><div class="sn" data-target="15">0</div><div class="sl">Courses Completed</div></div>
 </div>
@@ -563,7 +563,7 @@ footer{border-top:1px solid var(--bd);background:var(--bg2);padding:clamp(16px,3
     </div>
     <div class="skills-wrap">
       <div class="radar-col rv">
-        <svg id="radarSVG" viewBox="0 0 400 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Skills radar chart">
+        <svg id="radarSVG" viewBox="-30 -20 460 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Skills radar chart">
           <defs>
             <radialGradient id="radGrad" cx="50%" cy="50%" r="50%">
               <stop offset="0%" stop-color="#00D4FF" stop-opacity="0.2"/>
@@ -621,9 +621,9 @@ footer{border-top:1px solid var(--bd);background:var(--bg2);padding:clamp(16px,3
         <div style="display:flex;flex-direction:column;align-items:flex-end;gap:10px">
           <div class="proj-filter rv">
             <button class="pf act" data-cat="all">All</button>
-            <button class="pf" data-cat="robotics">Robotics</button>
             <button class="pf" data-cat="automotive">Automotive</button>
             <button class="pf" data-cat="av">Autonomous</button>
+            <button class="pf" data-cat="robotics">Robotics</button>
           </div>
           <div class="proj-nav-btns rv d1">
             <button class="pnb" id="pPrev" aria-label="Previous project">←</button>
@@ -1045,39 +1045,58 @@ footer{border-top:1px solid var(--bd);background:var(--bg2);padding:clamp(16px,3
     </div>
     <div class="tl-wrap rv d1">
       <div class="tl-spine"></div>
+
       <div class="tl-item">
         <div class="tl-node"><div class="tl-node-dot"></div></div>
         <div class="tl-year">Academic Foundation</div>
         <div class="tl-title">M.Tech Robotics — SRM University (GPA 8.73)</div>
-        <div class="tl-desc">Mastered ROS, SLAM, motion planning, sensor fusion, and autonomous systems. Developed multiple robotics simulations and real-hardware deployments including Wipod campus AV.</div>
         <span class="tl-chip chip-cy">Education</span>
       </div>
+
       <div class="tl-item">
         <div class="tl-node"><div class="tl-node-dot"></div></div>
         <div class="tl-year">Automotive</div>
-        <div class="tl-title">Embedded Systems Engineer — BMW, BYD &amp; UCAP</div>
-        <div class="tl-desc">RVC pixel processing, HMI camera modules, OpenGL overlays on ARM for parking assistance. Porting C code, Bilinear Interpolation optimisation, BMW BEGU tool integration for global OEMs.</div>
-        <div class="tl-imgs">
-          <img class="tl-img" src="https://raw.githubusercontent.com/Nitz719/Nithin_Rajan_Portfolio/main/images/BYD.JPG" alt="BYD project" loading="lazy">
-          <img class="tl-img" src="https://raw.githubusercontent.com/Nitz719/Nithin_Rajan_Portfolio/main/images/UCAP.JPG" alt="UCAP project" loading="lazy">
-          <img class="tl-img" src="https://raw.githubusercontent.com/Nitz719/Nithin_Rajan_Portfolio/main/images/RVC.png" alt="Reverse View Camera" loading="lazy">
-        </div>
+        <div class="tl-title">Systems Engineer — Over-Head Board Module (Alpine), Infotainment CCS (Forvia, France), BYD Project (Valeo) &amp; ARM Optimization for Automotive Modules</div>
         <span class="tl-chip chip-gr">Industry</span>
       </div>
+
       <div class="tl-item">
         <div class="tl-node"><div class="tl-node-dot"></div></div>
         <div class="tl-year">ADAS</div>
-        <div class="tl-title">Autonomous Systems — Robo Taxi (Tata Elxsi), Wipod (Wipro), High Payload (Toshiba)</div>
-        <div class="tl-desc">Developed self-driving vehicles with 3D SLAM mapping for Wipro and Tata Elxsi. Implemented MoveIt path planning and OMPL trajectory optimisation for Toshiba heavy robotic arm in simulation and real hardware.</div>
-        <span class="tl-chip chip-or">Robotics</span>
+        <div class="tl-title">Autonomous Systems — UCAP (Valeo), Reverse View Camera (Valeo)</div>
+        <span class="tl-chip chip-gr">Industry</span>
       </div>
-      <div class="tl-item" style="margin-bottom:0">
+
+      <div class="tl-item">
+        <div class="tl-node"><div class="tl-node-dot"></div></div>
+        <div class="tl-year">Robotics</div>
+        <div class="tl-title">Pet Robot (Furtual), Robo Taxi (Tata Elxsi), Wipod — Campus Self-Driving Car (Wipro), High Payload Path Planning (Toshiba) &amp; Educational Bots</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
+          <span class="tl-chip chip-cy">Education</span>
+          <span class="tl-chip chip-or">Industry</span>
+        </div>
+      </div>
+
+      <div class="tl-item">
         <div class="tl-node"><div class="tl-node-dot"></div></div>
         <div class="tl-year">Recent</div>
         <div class="tl-title">Automation Testing Lead — Alpine OHC &amp; Forvia IVI</div>
-        <div class="tl-desc">Led automation testing teams across global OEM projects. BDD-based Python scripting, CAPL automation, HIL testing with VT cards, TestRail reporting. Full cross-functional team leadership.</div>
-        <span class="tl-chip chip-cy">Testing Lead</span>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
+          <span class="tl-chip chip-cy">Testing Lead</span>
+          <span class="tl-chip chip-gr">Industry</span>
+        </div>
       </div>
+
+      <div class="tl-item" style="margin-bottom:0">
+        <div class="tl-node"><div class="tl-node-dot"></div></div>
+        <div class="tl-year">Recent</div>
+        <div class="tl-title">Robo Taxi (Tata Elxsi)</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
+          <span class="tl-chip chip-or">Autonomous</span>
+          <span class="tl-chip chip-gr">Industry</span>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1381,7 +1400,7 @@ document.querySelectorAll('.sn[data-target]').forEach(el => {
 /* ── RADAR CHART ── */
 (function () {
   const svg = document.getElementById('radarSVG'); if (!svg) return;
-  const cx = 200, cy = 195, r = 138;
+  const cx = 200, cy = 205, r = 118;
   const axes = [
     { label: 'ROS / Robotics', val: .95 }, { label: 'Autonomous', val: .90 },
     { label: 'C++ / Python', val: .92 }, { label: 'Embedded', val: .82 },
@@ -1416,7 +1435,7 @@ document.querySelectorAll('.sn[data-target]').forEach(el => {
     c.setAttribute('cx', p.x); c.setAttribute('cy', p.y); c.setAttribute('r', '4');
     c.setAttribute('fill', 'var(--cy)'); c.setAttribute('filter', 'url(#glow)');
     c.setAttribute('opacity', '0'); c.setAttribute('class', 'rdot'); dotsG.appendChild(c);
-    const lp = pt(a, r + 26);
+    const lp = pt(a, r + 44);
     const tx = document.createElementNS('http://www.w3.org/2000/svg', 'text');
     tx.setAttribute('x', lp.x); tx.setAttribute('y', lp.y);
     tx.setAttribute('text-anchor', lp.x < cx - 5 ? 'end' : lp.x > cx + 5 ? 'start' : 'middle');
