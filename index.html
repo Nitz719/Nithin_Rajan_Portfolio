@@ -355,11 +355,12 @@ nav.scrolled{padding:12px var(--pad);background:rgba(3,3,9,0.96);backdrop-filter
 .modal-close:hover{border-color:var(--cy);color:var(--cy)}
 .modal-cat{font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:3px;color:var(--cy);text-transform:uppercase;margin-bottom:10px}
 .modal-title{font-family:'Fraunces',serif;font-weight:800;font-size:clamp(20px,3vw,28px);letter-spacing:-1px;margin-bottom:16px}
-.modal-img{width:100%;height:auto;max-height:420px;object-fit:contain;object-position:center;border-radius:2px;border:1px solid var(--bd);margin-bottom:20px;background:rgba(0,0,0,0.3)}
+.modal-img{width:100%;height:auto;max-height:420px;object-fit:contain;object-position:center;border-radius:2px;border:1px solid var(--bd);margin-bottom:20px;background:rgba(0,0,0,0.3);image-rendering:crisp-edges;image-rendering:-webkit-optimize-contrast;filter:url(#sharpen) contrast(1.08) saturate(1.1);-webkit-backface-visibility:hidden;backface-visibility:hidden;transform:translateZ(0);will-change:transform}
 .modal-desc{font-size:clamp(12px,1.5vw,14px);color:var(--muted2);line-height:1.9;margin-bottom:18px}
 .modal-tags{display:flex;flex-wrap:wrap;gap:6px}
 
-/* ═══ FOOTER ═══ */
+/* ═══ MODAL IMAGE SHARPENING FILTER ═══ */
+.modal-img-filter{position:absolute;width:0;height:0;overflow:hidden}
 footer{border-top:1px solid var(--bd);background:var(--bg2);padding:clamp(16px,3vw,28px) var(--pad);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
 .footer-brand{font-family:'Rajdhani',serif;font-weight:900;font-size:18px;letter-spacing:-1px;color:var(--cy)}
 .footer-copy{font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--muted)}
@@ -385,6 +386,19 @@ footer{border-top:1px solid var(--bd);background:var(--bg2);padding:clamp(16px,3
 
 <!-- SCROLL TOP -->
 <button id="scrollTop" aria-label="Back to top" title="Back to top">↑</button>
+
+<!-- MODAL IMAGE SHARPENING FILTER -->
+<svg class="modal-img-filter" aria-hidden="true">
+  <defs>
+    <filter id="sharpen" x="0" y="0" width="100%" height="100%" color-interpolation-filters="linearRGB">
+      <feConvolveMatrix order="3" kernelUnitLength="1"
+        kernel="-0.1 -0.1 -0.1
+                -0.1  1.9 -0.1
+                -0.1 -0.1 -0.1"
+        preserveAlpha="true"/>
+    </filter>
+  </defs>
+</svg>
 
 <!-- MODAL -->
 <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
